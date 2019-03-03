@@ -28,6 +28,7 @@ def prices(request):
 		crypto = json.loads(crypto_request.content)	
 		return render(request, 'prices.html', {'quote':quote, 'crypto':crypto})
 	else:
-		return render(request, 'prices.html', {})
+		notfound = "Enter a crypto currency symbol into the Navbar Lookup Crypto field above... "
+		return render(request, 'prices.html', {'notfound': notfound})
 
 
